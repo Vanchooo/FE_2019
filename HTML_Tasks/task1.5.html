@@ -18,27 +18,34 @@
             position: absolute;
         }
         .container-one .article{
-            background-color: #FFFFFF;
+            background-color: #ccc;
             width: 400px;
-            height: 250px;
             position: relative;
+            border-radius: 0px 0px 10px 10px;
+            padding: 12px;
+            font-size: 17px;
         }
+        
+        
         .container-one .article::before{
             position: absolute;
             content: "";
             width: 120px;
             height: 40px;
             background-color:#000000;
-
+            top: 0;
+            left: 0;
         }
+        
+        
         .container-one .article::after{
             position: absolute;
             content: "";
             width: 0;
             height: 0;
             border: 14px solid transparent;	
-            border-left: 8px solid #000000; 
-            border-top: 26px solid #000000;
+            border-left: 8px solid #000; 
+            border-top: 26px solid #000;
             top: 0;
             left: 120px;
 
@@ -48,7 +55,12 @@
             position:relative;
             z-index: 1;
             top: -15px;
-            left: 15px;
+            left: 5px;
+            margin: 0;
+        }
+        .sup{
+            vertical-align: super;
+            font-size: smaller;
         }
     </style>
 </head>
@@ -56,7 +68,8 @@
     <div class="container-one">
         <div class="article">
             <h1>ЭКГ-5</h1>
-            ЭКГ-5 - карьерный гусеничный экскаватор с ковшом вместимостью 5м3 - электрическая
+            
+            ЭКГ-5 &mdash; карьерный гусеничный экскаватор с ковшом вместимостью 5м<span class="sup">3</span> &mdash; электрическая
             карьерная полноповоротная лопата на гусеничном ходу, предназначенная для выемки
             и погрузки в транспортные средства полезных ископаемых и вскрышных пород, в 
             том числе тяжелых скальных, предварительно разрыхленных взрывом, в угольной 
