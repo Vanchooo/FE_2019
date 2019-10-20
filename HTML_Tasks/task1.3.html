@@ -6,134 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        ul{
-            list-style: none;
-        }
-        li{
-            list-style: none;
-        }
-
-
-        
-        nav ul ul{
-            display: none;
-            position:absolute;
-            
-        }
-
-        nav>ul>li:hover>ul{
-            display: inherit;
-            
-
-        }
-
-        nav ul ul li{
-
-            float:none;
-            display:list-item;
-            position: relative;
-               
-        }
-
-        
-			
-        /* убираем отступы и поля, а также list-style для "ul", 
-            * и добавляем "position:relative" */
-        nav ul {
-            padding:0;
-            margin:0;
-            color: blue;
-            list-style: none;
-            position: relative;
-                        
-        }
-
-        
-        /* применяем inline-block позиционирование к элементам навигации */
-        nav ul li {
-            margin: 0px -7px 0 0;
-            display:inline-block;
-
-        }
-        
-        /* стилизуем ссылки */
-        nav a {
-            display:block;
-            padding:0 10px;
-            line-height: 60px;
-            color: blue;
-        }
-
-        nav a:hover {
-            display:block;
-            padding:0 10px;
-            line-height: 60px;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px 5px 0 0;
-            box-shadow:  0 -5px 10px  rgba(0,0,0,0.5); /* Параметры тени */
-        }
-
-        nav ul ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            box-shadow: 0 5px 10px  rgba(0,0,0,0.5); /* Параметры тени */
-
-        }
-			
-        /* отображаем выпадающий список при наведении */
-        nav ul li:hover > ul {
-            display:inherit;
-        }
-        
-        /* первый уровень выпадающего списка */
-        nav ul ul li a {
-            min-width:170px;
-            float:none;
-            display:list-item;
-            position: relative;
-            text-decoration: none;
-            background-color: white;
-        }
-
-        nav ul ul li a:hover {
-            min-width:170px;
-            float:none;
-            display:list-item;
-            position: relative;
-            text-decoration: none;
-            color: white;
-            background-color: blue;
-            margin: auto;
-            border-radius: 3px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/task1.3.css">
 </head>
 
 <body>
-<nav>
-    <ul>
-        <li><a href="#">Файл</a>
-            <ul>
-                <li><a href="#">Новый</a></li>
-                <li><a href="#">Открыть</a></li>
-                <li><a href="#">Сохранить</a></li>
-                <li><a href="#">Закрыть</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Правка</a>
-            <ul>
-                <li><a href="#">Вырезать</a></li>
-                <li><a href="#">Копировать</a></li>
-                <li><a href="#">Вставить</a></li>
-                <li><a href="#">Удалить</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+    <li><a href="#">Файл</a>
+        <ul>
+            <li><a href="#">Новый</a></li>
+            <li><a href="#">Открыть</a></li>
+            <li><a href="#">Сохранить</a></li>
+            <li><a href="#">Закрыть</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Правка</a>
+        <ul>
+            <li><a href="#">Вырезать</a></li>
+            <li><a href="#">Копировать</a></li>
+            <li><a href="#">Вставить</a></li>
+            <li><a href="#">Удалить</a></li>
+        </ul>
+    </li>
 
 </body>
 

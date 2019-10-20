@@ -1,0 +1,88 @@
+.equalizer{
+    background-color: #000;
+}  
+.block-common-5{
+display: inline-block;   
+width: 60px;
+height: 160px;
+background: linear-gradient(to top, rgb(255,151,49), rgb(225,220,106));
+border-radius: 10px 10px 0px 0px;
+}
+.inner-block-5{
+display: inline-block;  
+width: 60px;
+height: 160px;
+background: repeating-linear-gradient(0deg,
+  transparent,
+  transparent 30px,
+  #000 20px,
+  #000 33px);
+}
+.block-common-2{
+display: inline-block;   
+width: 60px;
+height: 65px;
+background: linear-gradient(to top, rgb(255,151,49), rgb(225,220,106));
+border-radius: 10px 10px 0px 0px;
+}
+.inner-block-2{
+display: inline-block;  
+width: 60px;
+height: 65px;
+background: repeating-linear-gradient(0deg,
+  transparent,
+  transparent 30px,
+  #000 20px,
+  #000 33px);
+}
+.block-common-8{
+display: inline-block;   
+width: 60px;
+height: 256px;
+background: linear-gradient(to top, rgb(255,151,49), rgb(225,220,106));
+border-radius: 10px 10px 0px 0px;
+}
+.inner-block-8{
+display: inline-block;  
+width: 60px;
+height: 256px;
+background: repeating-linear-gradient(0deg,
+  transparent,
+  transparent 30px,
+  #000 20px,
+  #000 33px);
+}
+.block-common-10{
+display: inline-block;   
+width: 60px;
+height: 320px;
+background: linear-gradient(to top, rgb(255,151,49), rgb(225,220,106));
+border-radius: 10px 10px 0px 0px;
+}
+.inner-block-10{
+display: inline-block;  
+width: 60px;
+height: 320px;
+background: repeating-linear-gradient(0deg,
+  transparent,
+  transparent 30px,
+  #000 20px,
+  #000 33px);
+}
+.block-common-3{
+display: inline-block;   
+width: 60px;
+height: 96px;
+background: linear-gradient(to top, rgb(255,151,49), rgb(225,220,106));
+border-radius: 10px 10px 0px 0px;
+}
+.inner-block-3{
+display: inline-block;  
+width: 60px;
+height: 96px;
+background: repeating-linear-gradient(0deg,
+  transparent,
+  transparent 30px,
+  #000 20px,
+  #000 33px);
+}
