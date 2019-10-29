@@ -13,21 +13,48 @@
             background-color: #228B22;
         }
 
-        .container h1 {
+         h1 {
             color: #fff;
             font-size: 25px;
             padding-top: 20px;
             padding-bottom: 20px;
+            text-align: center;
         }
 
-        .container {
+        .container-top {
             display: flex;
             align-items: center;
             flex-direction: column;
-            position: absolute;
+            /* position: absolute; */
             top: 0;
-            left: 10px;
-            right: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            bottom: 0;
+        }
+
+        .container-top .sign-in-container {
+            width: 100%;
+        }
+
+        .container-top #sign-in {
+            width: 100%;
+            line-height: 2.5;
+            background-color: #fff;
+            border: none;
+            text-align: left;
+            padding: 0 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container-main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            /* position: absolute; */
+            top: 0;
+            margin-left: 10px;
+            margin-right: 10px;
             bottom: 0;
         }
 
@@ -51,20 +78,7 @@
 
         }
 
-        .container .sign-in-container {
-            width: 100%;
-        }
 
-        .container #sign-in {
-            width: 100%;
-            line-height: 2.5;
-            background-color: #fff;
-            border: none;
-            text-align: left;
-            padding: 0 15px;
-            font-size: 16px;
-            cursor: pointer;
-        }
 
         .card {
             margin-top: 10px;
@@ -112,12 +126,40 @@
             font-size: 14px;
             color: #808080;
         }
+
+        @media(min-width: 800px) {
+            .container-top {
+                display: flex;
+                flex-direction: row;
+
+            }
+
+            .menu div {
+                padding: 0 14px;
+                /* border: 1px solid #DCDCDC; */
+                border: none;
+                line-height: 2.5;
+                background-color: #fff;
+            }
+            .menu li{
+                display: inline-block;
+            }
+            .menu{
+                background: none;
+                margin-top: 0;
+            }
+            .menu a{
+                display: inline-block;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
         <h1>Flexbox Layout</h1>
+    <div class="container-top">
+        
         <!-- <header></header> -->
         <div class="sign-in-container">
             <button id="sign-in">Sign in</button>
@@ -136,10 +178,10 @@
                 <div><a href="#">Partners</a></div>
             </li>
         </ul>
+    </div>
 
-        <!-- <main></main> -->
-
-
+    <!-- <main></main> -->
+    <div class="container-main">
         <div class="card">
             <img src="images/owl.jpg" class="card-img-top" alt="">
             <div class="card-body">
