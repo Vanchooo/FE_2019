@@ -21,6 +21,9 @@ h1 {
     bottom: 0;
     
 }
+.column{
+    width: 100%;
+}
 
 .container-top .sign-in-container {
     width: 100%;
@@ -164,12 +167,28 @@ h1 {
         border: 3px;
         font-size: 14px;
     }
-    /* .container-main{
+    .container-main{
         flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .column{
+        width: 48%;
     }
 
-    .container-left{
+    /* .container-left{
         margin-right: 15px;
+        align-items: baseline;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .container-right{
+        display: flex;
+        max-width: 50%;
+        flex-direction: row;
+        flex-wrap: wrap;
     } */
 
     @media(min-width: 1000px) {
