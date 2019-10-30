@@ -1,7 +1,8 @@
 ul {
     display: none;
     position: absolute;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: 33px;
 }
 ul::before{
     content: "";
@@ -51,6 +52,7 @@ a {
     padding: 0 10px;
     line-height: 35px;
     color: rgb(12, 26, 233);
+    z-index: 1;
 }
 li:hover>ul {
     display: inherit;
@@ -63,3 +65,4 @@ ul li a {
     text-decoration: none;
     background-color: white;
 }
+
