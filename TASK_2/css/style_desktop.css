@@ -1,0 +1,28 @@
+    @media(min-width: 1000px) {
+        .container-top{
+            margin-left: 110px;
+            margin-right: 110px;
+
+        }
+
+        .container-main{
+            margin-left: 110px;
+            margin-right: 110px;
+        }
+        .top-column .card{
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .column-sm{
+            width: 28%;
+        }
+
+        .column{
+            width: 70%;
+        }
+
+        .column-left .card
+       
+    }
+}
