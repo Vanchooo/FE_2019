@@ -21,8 +21,8 @@
         .column{
             width: 70%;
         }
+        .top-column .card div{
+            height: auto;
+        }
 
-        .column-left .card
-       
     }
-}

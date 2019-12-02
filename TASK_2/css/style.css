@@ -129,6 +129,10 @@ h1 {
     font-size: 14px;
     color: #808080;
 }
+.top-column .card div{
+    height: 100%;
+}
+
 
 @media(min-width: 800px) {
     .container-top {
@@ -203,6 +207,30 @@ h1 {
         width: 100%;
     }
 
+    .column-left .card .card-body{
+        flex-grow: 1;
+    }
+
+    .top-column .card .container-right{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .top-column .card .card-body{
+        flex-grow: 1;
+    }
+    .top-column .card img{
+        max-width: 100%;
+    }
+    .top-column .card div{
+        height: 100%;
+    }
+    
+    .top-column{
+        height: 100%;
+        margin-bottom: 10px;
+    }
+   
     .column-left .card-img-top  {
         height: auto;
     }
