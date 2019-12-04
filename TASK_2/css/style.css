@@ -58,6 +58,7 @@ h1 {
     top: 0;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     bottom: 0;
 }
 
@@ -190,8 +191,6 @@ h1 {
         flex-direction: column;
     }
 
-   
-
     .column-sm{
         width: 49%;
     }
@@ -199,6 +198,7 @@ h1 {
     .bottom-column{
         display: flex;
         justify-content: space-between;
+        height: 100%;
     }
 
     .column-left{
@@ -233,6 +233,7 @@ h1 {
    
     .column-left .card-img-top  {
         height: auto;
+        flex-shrink: 0;
     }
     
     .column-right{
