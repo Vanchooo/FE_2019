@@ -10,12 +10,12 @@
             margin-right: 110px;
         }
         .top-column .card{
-            flex-direction: row;
+            flex-direction: row-reverse;
             height: 100%;
         }
 
         .column-sm{
-            width: 28%;
+            width: 28.5%;
         }
 
         .column{
@@ -23,6 +23,17 @@
         }
         .top-column .card div{
             height: auto;
+        }
+
+        .main-element{
+            flex-grow: 1;
+        }
+        .main-element .card-body{
+            flex-grow: 1;
+        }
+
+        .column-left{
+            width: 200%;
         }
 
     }
