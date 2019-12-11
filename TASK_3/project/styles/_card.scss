@@ -1,0 +1,9 @@
+.card{
+    background-color: white;
+    & &__body{
+        padding: 10px;
+    }
+    &-sm{
+        width: 100%;
+    }
+}
