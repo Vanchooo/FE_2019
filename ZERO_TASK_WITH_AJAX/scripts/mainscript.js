@@ -30,7 +30,7 @@ function showAllPosts(user_data) {
     }
 
 }
-function showFivePosts(user_data, lastPost, lastPostPlusFive) {
+function showPosts(user_data, lastPost, lastPostPlusFive) {
     let mainContainer = document.querySelector('div.main-container');
 
     for (lastPost; lastPost < lastPostPlusFive; lastPost++) {
@@ -48,23 +48,25 @@ function showFivePosts(user_data, lastPost, lastPostPlusFive) {
 
 }
 
-fetch(url).then((response) => {
-    return response.json();
 
-}).then((data) => {
-    showMainInfo(data);
-    showFivePosts(data, 0, 5);
+$.ajax({
+    dataType: 'json',
+    url: 'http://5b1d83fba1c56c001458c63f.mockapi.io/dd-lab/users/1',
+    success: function (data) {
+        showMainInfo(data);
+        showPosts(data, 0, 5);
 
-    let lastPost = 5;
-    let lastPostPlusFive = 10;
+        let lastPost = 5;
+        let lastPostInBlock = 10;
 
-    elem.onclick = function () {
-        showFivePosts(data, lastPost, lastPostPlusFive);
-        lastPost = lastPost + 5;
-        lastPostPlusFive = lastPostPlusFive + 5;
-    };
+        elem.onclick = function () {
+            showPosts(data, lastPost, lastPostInBlock);
+            lastPost = lastPost + 5;
+            lastPostInBlock = lastPostInBlock + 5;
+        };
+    }
+});
 
-})
 
 
 
