@@ -1,15 +1,15 @@
-export default{
-    actions:{
-        drink(context){
+export default {
+    actions: {
+        drink(context) {
             context.commit('drink');
         },
-        eat(context){
+        eat(context) {
             context.commit('eat');
         },
-        play(context){
+        play(context) {
             context.commit('play');
         },
-        sport(context){
+        sport(context) {
             context.commit('sport');
         }
 
@@ -34,40 +34,23 @@ export default{
         }
     },
     state: {
-        healthColor: "yellow",
         health: 100,
         tiredness: 100,
-        tirednessColor: 'orange',
         hunger: 100,
-        hungerColor: 'red',
         thirst: 100,
-        thirstColor: 'black'
     },
     getters: {
-        getHealthColor(state){
-            return state.healthColor;
-        },
-        getHealth(state){
+        getHealth(state) {
             return state.health;
         },
-        getTiredness(state){
+        getTiredness(state) {
             return state.tiredness;
         },
-        getTirednessColor(state){
-            return state.tirednessColor;
-        },
-        getHunger(state){
+        getHunger(state) {
             return state.hunger;
         },
-        getHungerColor(state){
-            return state.hungerColor;
-        },
-        getThirst(state){
+        getThirst(state) {
             return state.thirst;
-        },
-        getThirstColor(state){
-            return state.thirstColor;
-        },
-        
+        }
     }
 }
