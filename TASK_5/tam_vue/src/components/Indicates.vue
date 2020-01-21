@@ -3,15 +3,15 @@
 </template>
 
 <script>
-    export default {        
+    export default {
         props: {
-            width: Number,
+            width: Number
         },
         computed: {
             styles: function() {
                 return {
                     width: this.width + "px",
-                    height: '4px',
+                    height: "4px"
                 };
             }
         }

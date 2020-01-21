@@ -1,28 +1,52 @@
 <template>
     <div id="app">
-        <div class="indicates-container">
-            <Indicates
-                :width="getHealth"
-                class="indicates-container__health"
-            />
-            <Indicates
-                :width="getTiredness"
-                class="indicates-container__tiredness"
-            />
-            <Indicates
-                :width="getHunger"
-                class="indicates-container__hunger"
-            />
-            <Indicates
-                :width="getThirst"
-                class="indicates-container__thirst"
-            />
+        <div class="top-container">
+            <div class="labels-container">
+                <div>Здоровье</div>
+                <div>Усталость</div>
+                <div>Голод</div>
+                <div>Жажда</div>
+            </div>
+            <div class="indicates-container">
+                <Indicates
+                    :width="getHealth"
+                    class="indicates-container__health"
+                />
+                <Indicates
+                    :width="getTiredness"
+                    class="indicates-container__tiredness"
+                />
+                <Indicates
+                    :width="getHunger"
+                    class="indicates-container__hunger"
+                />
+                <Indicates
+                    :width="getThirst"
+                    class="indicates-container__thirst"
+                />
+            </div>
         </div>
         <div class="indicate_buttons">
-            <IndicateButtons @click="drink" buttonLabel="Пить" class="indicate_buttons__drink" />
-            <IndicateButtons @click="eat" buttonLabel="Есть" class="indicate_buttons__eat" />
-            <IndicateButtons @click="play" buttonLabel="Играть" class="indicate_buttons__play" />
-            <IndicateButtons @click="sport" buttonLabel="Спорт" class="indicate_buttons__sport" />
+            <IndicateButtons
+                @click="drink"
+                buttonLabel="Пить"
+                class="indicate_buttons__drink"
+            />
+            <IndicateButtons
+                @click="eat"
+                buttonLabel="Есть"
+                class="indicate_buttons__eat"
+            />
+            <IndicateButtons
+                @click="play"
+                buttonLabel="Играть"
+                class="indicate_buttons__play"
+            />
+            <IndicateButtons
+                @click="sport"
+                buttonLabel="Спорт"
+                class="indicate_buttons__sport"
+            />
         </div>
     </div>
 </template>
@@ -60,10 +84,21 @@
         justify-content: center;
         align-items: center;
     }
+    .top-container {
+        display: flex;
+        height: 300px;
+        width: 600px;
+    }
+    .labels-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
     .indicates-container {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
     }
     .indicates-container__health {
         background-color: #f00;
