@@ -31,7 +31,10 @@ export default {
             state.health += 10;
             state.hungry += 10;
             state.thirst += 10;
-        }
+        },
+        // actionPlus(prop){
+        //     state[`${prop}`] += 10; 
+        // }
     },
     state: {
         health: 100,

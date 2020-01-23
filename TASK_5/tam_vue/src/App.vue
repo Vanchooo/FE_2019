@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <h1>My little tamagochi</h1>
         <div class="top-container">
             <div class="labels-container">
                 <div>Здоровье</div>
@@ -47,6 +48,7 @@
                 buttonLabel="Спорт"
                 class="indicate_buttons__sport"
             />
+            <!-- <button @click="checkState">click me</button> -->
         </div>
     </div>
 </template>
@@ -58,6 +60,11 @@
 
     export default {
         name: "app",
+        data() {
+            return {
+                show: false
+            };
+        },
         components: {
             IndicateButtons: IndicateButtons,
             Indicates: Indicates
@@ -74,6 +81,7 @@
 
 <style>
     #app {
+        font-family: Bradley Hand, cursive;
         position: absolute;
         top: 0;
         left: 0;
@@ -88,11 +96,15 @@
         display: flex;
         height: 300px;
         width: 600px;
+        border: 2px groove #000;
+        border-radius: 16px;
+        padding: 16px;
     }
     .labels-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin-right: 15px;
     }
     .indicates-container {
         display: flex;
@@ -101,15 +113,39 @@
         align-items: flex-start;
     }
     .indicates-container__health {
-        background-color: #f00;
+        background: linear-gradient(to right, #fa8072, #f00);
+        max-width: 490px;
+        transition: width 0.3s;
     }
     .indicates-container__tiredness {
-        background-color: #ff0;
+        background: linear-gradient(to right, #98fb98, #32cd32);
+        max-width: 490px;
+        transition: width 0.3s;
     }
     .indicates-container__hunger {
-        background-color: #0ff;
+        background: linear-gradient(to right, #cd853f, #8b4513);
+        max-width: 490px;
+        transition: width 0.3s;
     }
     .indicates-container__thirst {
-        background-color: #f0f;
+        background: linear-gradient(to right, #00ffff, #00ced1);
+        background-color: #0ff;
+        max-width: 490px;
+        transition: width 0.3s;
+    }
+
+    .indicate_buttons {
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .indicate_buttons button {
+        color: #000;
+        padding: 19px;
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        font-family: Bradley Hand, cursive;
     }
 </style>

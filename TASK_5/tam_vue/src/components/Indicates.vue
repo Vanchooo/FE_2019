@@ -11,7 +11,7 @@
             styles: function() {
                 return {
                     width: this.width + "px",
-                    height: "4px"
+                    height: "7px"
                 };
             }
         }
