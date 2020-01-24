@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <img :src="picture" alt="" />
         <h1>My little tamagochi</h1>
         <div class="top-container">
             <div class="labels-container">
@@ -57,24 +58,34 @@
     import IndicateButtons from "./components/IndicateButtons";
     import Indicates from "./components/Indicates";
     import { mapActions, mapGetters } from "vuex";
+    import tamOk from "./assets/pikachu-happy.jpg";
+    import tamNotOk from "./assets/pikachu-angry.jpg";
 
     export default {
         name: "app",
         data() {
             return {
-                show: false
+                show: false,
             };
         },
         components: {
             IndicateButtons: IndicateButtons,
             Indicates: Indicates
         },
-        computed: mapGetters([
-            "getHealth",
-            "getTiredness",
-            "getHunger",
-            "getThirst"
-        ]),
+        computed: {
+            ...mapGetters(["getHealth", "getTiredness", "getHunger", "getThirst"]),
+            picture(){
+                return this.getHunger < 0 ? tamNotOk : tamOk
+            }
+        },
+        // watch: {
+        //     getHunger() {
+        //         if (this.getHunger < 0) {
+        //             return (this.picture = tamNotOk);
+        //         }
+        //     }
+        // },
+
         methods: mapActions(["drink", "eat", "play", "sport"])
     };
 </script>
