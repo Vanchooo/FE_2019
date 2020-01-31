@@ -11,41 +11,41 @@
             </div>
             <div class="indicates-container">
                 <Indicates
-                    :width="getHealth"
+                    :width="tams.pika.health"
                     class="indicates-container__health"
                 />
                 <Indicates
-                    :width="getTiredness"
+                    :width="tams.pika.tiredness"
                     class="indicates-container__tiredness"
                 />
                 <Indicates
-                    :width="getHunger"
+                    :width="tams.pika.hunger"
                     class="indicates-container__hunger"
                 />
                 <Indicates
-                    :width="getThirst"
+                    :width="tams.pika.thirst"
                     class="indicates-container__thirst"
                 />
             </div>
         </div>
         <div class="indicate_buttons">
             <IndicateButtons
-                @click="drink"
+                @click="change({ action: 'drink', prop: 'pika' })"
                 buttonLabel="Пить"
                 class="indicate_buttons__drink"
             />
             <IndicateButtons
-                @click="eat"
+                @click="change({ action: 'eat', prop: 'pika' })"
                 buttonLabel="Есть"
                 class="indicate_buttons__eat"
             />
             <IndicateButtons
-                @click="play"
+                @click="change({ action: 'play', prop: 'pika' })"
                 buttonLabel="Играть"
                 class="indicate_buttons__play"
             />
             <IndicateButtons
-                @click="sport"
+                @click="change({ action: 'sport', prop: 'pika' })"
                 buttonLabel="Спорт"
                 class="indicate_buttons__sport"
             />
@@ -66,27 +66,56 @@
         data() {
             return {
                 show: false,
+                timer: null,
+                          
             };
+        },
+        mounted() {
+            this.startTimer()
+        },
+        destroyed() {
+            this.stopTimer()
         },
         components: {
             IndicateButtons: IndicateButtons,
             Indicates: Indicates
         },
         computed: {
-            ...mapGetters(["getHealth", "getTiredness", "getHunger", "getThirst"]),
-            picture(){
-                return this.getHunger < 0 ? tamNotOk : tamOk
+            ...mapGetters(["tams"]),
+
+            picture() {
+                if (this.isDie) {                                      
+                    return tamNotOk;
+                } else {
+                    return tamOk;
+                }
+            },
+            isDie(){
+                return this.tams.pika.health <= 0 ||
+                    this.tams.pika.tiredness <= 0 ||
+                    this.tams.pika.hunger <= 0 ||
+                    this.tams.pika.thirst <= 0
             }
         },
-        // watch: {
-        //     getHunger() {
-        //         if (this.getHunger < 0) {
-        //             return (this.picture = tamNotOk);
-        //         }
-        //     }
-        // },
-
-        methods: mapActions(["drink", "eat", "play", "sport"])
+        methods: {
+            ...mapActions(["change"]),
+            startTimer() {
+                this.timer = setInterval(() => {
+                    this.change({ action: "die", prop: "pika" });
+                }, 1000);
+            },
+            stopTimer(){
+                clearTimeout(this.timer)
+            }
+        },
+        watch: {
+            isDie(value){
+                if(value){
+                    this.stopTimer();
+                }
+            }
+            
+        }
     };
 </script>
 
@@ -144,7 +173,6 @@
         max-width: 490px;
         transition: width 0.3s;
     }
-
     .indicate_buttons {
         display: flex;
         width: 400px;
@@ -158,5 +186,6 @@
         border: 2px solid #000;
         border-radius: 10px;
         font-family: Bradley Hand, cursive;
+        cursor: pointer;
     }
 </style>

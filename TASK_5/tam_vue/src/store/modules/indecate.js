@@ -1,59 +1,56 @@
 export default {
     actions: {
-        drink(context) {
-            context.commit('drink');
+        change(context, { action, prop }) {
+            context.commit(action, prop);
         },
-        eat(context) {
-            context.commit('eat');
-        },
-        play(context) {
-            context.commit('play');
-        },
-        sport(context) {
-            context.commit('sport');
-        }
-
     },
     mutations: {
-        drink(state) {
-            state.thirst -= 10;
-            state.health -= 1;
+        drink(state, tamName) {
+            state.tams[tamName].thirst += 15;
+            state.tams[tamName].health -= 5;
         },
-        eat(state) {
-            state.hunger -= 10;
-            state.health -= 2;
+        eat(state, tamName) {
+            state.tams[tamName].hunger += 15;
+            state.tams[tamName].health -= 5;
         },
-        play(state) {
-            state.thirst += 30;
-            state.hungry += 10;
+        play(state, tamName) {
+            state.tams[tamName].thirst -= 15;
+            state.tams[tamName].health += 10;
         },
-        sport(state) {
-            state.health += 10;
-            state.hungry += 10;
-            state.thirst += 10;
+        sport(state, tamName) {
+            state.tams[tamName].health += 15;
+            state.tams[tamName].hunger -= 10;
+            state.tams[tamName].thirst -= 10;
         },
+        die(state, tamName) {
+            state.tams[tamName].health -= 5;
+            state.tams[tamName].hunger -= 5;
+            state.tams[tamName].thirst -= 5;
+            state.tams[tamName].tiredness -= 5;
+        }
         // actionPlus(prop){
         //     state[`${prop}`] += 10; 
         // }
     },
     state: {
-        health: 100,
-        tiredness: 100,
-        hunger: 100,
-        thirst: 100,
+        tams: {
+            pika: {
+                health: 100,
+                tiredness: 100,
+                hunger: 100,
+                thirst: 100,
+            },
+            ray: {
+                health: 50,
+                tiredness: 50,
+                hunger: 50,
+                thirst: 50,
+            },
+        }
     },
     getters: {
-        getHealth(state) {
-            return state.health;
-        },
-        getTiredness(state) {
-            return state.tiredness;
-        },
-        getHunger(state) {
-            return state.hunger;
-        },
-        getThirst(state) {
-            return state.thirst;
+        tams: state => {
+            return state.tams;
         }
     }
 }
