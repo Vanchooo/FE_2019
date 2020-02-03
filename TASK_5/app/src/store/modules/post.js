@@ -1,7 +1,7 @@
 export default {
     actions: {
-        async fetchPosts(ctx, limit = 3){
-            const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=' + limit);
+        async fetchPosts(ctx, limit = 10){
+            const res = await fetch('http://5b1d83fba1c56c001458c63f.mockapi.io/dd-lab/users/1/posts?page=1&limit=' + limit);
             const posts = await res.json();
 
             ctx.commit('updatePosts', posts)

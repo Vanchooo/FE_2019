@@ -113,79 +113,78 @@
                 if(value){
                     this.stopTimer();
                 }
-            }
-            
+            }            
         }
     };
 </script>
 
 <style>
     #app {
-        font-family: Bradley Hand, cursive;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .top-container {
-        display: flex;
-        height: 300px;
-        width: 600px;
-        border: 2px groove #000;
-        border-radius: 16px;
-        padding: 16px;
-    }
-    .labels-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-right: 15px;
-    }
-    .indicates-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-    .indicates-container__health {
-        background: linear-gradient(to right, #fa8072, #f00);
-        max-width: 490px;
-        transition: width 0.3s;
-    }
-    .indicates-container__tiredness {
-        background: linear-gradient(to right, #98fb98, #32cd32);
-        max-width: 490px;
-        transition: width 0.3s;
-    }
-    .indicates-container__hunger {
-        background: linear-gradient(to right, #cd853f, #8b4513);
-        max-width: 490px;
-        transition: width 0.3s;
-    }
-    .indicates-container__thirst {
-        background: linear-gradient(to right, #00ffff, #00ced1);
-        background-color: #0ff;
-        max-width: 490px;
-        transition: width 0.3s;
-    }
-    .indicate_buttons {
-        display: flex;
-        width: 400px;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-    .indicate_buttons button {
-        color: #000;
-        padding: 19px;
-        background: #fff;
-        border: 2px solid #000;
-        border-radius: 10px;
-        font-family: Bradley Hand, cursive;
-        cursor: pointer;
-    }
+    font-family: Bradley Hand, cursive;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-container {
+    display: flex;
+    height: 300px;
+    width: 600px;
+    border: 2px groove #000;
+    border-radius: 16px;
+    padding: 16px;
+}
+.labels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+.indicates-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.indicates-container__health {
+    background: linear-gradient(to right, #fa8072, #f00);
+    max-width: 490px;
+    transition: width 0.3s;
+}
+.indicates-container__tiredness {
+    background: linear-gradient(to right, #98fb98, #32cd32);
+    max-width: 490px;
+    transition: width 0.3s;
+}
+.indicates-container__hunger {
+    background: linear-gradient(to right, #cd853f, #8b4513);
+    max-width: 490px;
+    transition: width 0.3s;
+}
+.indicates-container__thirst {
+    background: linear-gradient(to right, #00ffff, #00ced1);
+    background-color: #0ff;
+    max-width: 490px;
+    transition: width 0.3s;
+}
+.indicate_buttons {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.indicate_buttons button {
+    color: #000;
+    padding: 19px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-family: Bradley Hand, cursive;
+    cursor: pointer;
+}
 </style>
