@@ -6,8 +6,8 @@ export default {
 
             ctx.commit('updatePosts', posts)
         },
-        eat({ commit, state }, value) {
-            commit('eat', state.hunger - value)
+        deletePost(context, postNumber){
+            context.commit('deletePost', postNumber)
         }
     },
     mutations: {
@@ -16,7 +16,10 @@ export default {
         },
         createPost(state, newPost) {
             state.posts.unshift(newPost)
-        },
+        },    
+        deletePost(state, postNumber){
+            state.posts.splice(state.posts.indexOf(postNumber), 1);
+        }
     },
     state: {
         posts: []
