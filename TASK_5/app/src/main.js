@@ -5,6 +5,7 @@ import AddNewPost from './components/AddNewPost.vue'
 import VueRouter from "vue-router";
 import MainPage from "./components/MainPage.vue"
 
+
 Vue.use(VueRouter)
 
 
