@@ -1,13 +1,15 @@
 <template>
     <div class="main-container">
         <div class="control-container">
-
-            <router-link tag="button" to="/add-new-post" class="add-post-button">+ Добавить событие </router-link>
-            <button @click="sortByDate" class="sort-button">Сортировать по: Дате</button>
-           
+            <router-link tag="button" to="/add-new-post" class="add-post-button"
+                >+ Добавить событие
+            </router-link>
+            <button @click="sortByDate" class="sort-button">
+                Сортировать по: Дате
+            </button>
         </div>
         <div class="posts-container">
-            <div class="post" v-for="post in allPosts" :key="post.id">
+            <div class="post" v-for="post in paginatedDate" :key="post.id">
                 <div class="post__header">
                     <div class="post__title">{{ post.title }}</div>
                     <div class="post__delete">
@@ -25,6 +27,11 @@
                 </div>
             </div>
         </div>
+        <button @click="prevPage">Previous</button>
+        <span v-for="n in pageCount" :key="n">
+            <button @click="currentPageDate(n)">{{ n }}</button>
+        </span>
+        <button @click="nextPage">Next</button>
     </div>
 </template>
 
@@ -34,9 +41,41 @@
 
     export default {
         name: "app",
-        computed: mapGetters(["allPosts", "postsCount"]),
-        methods: mapActions(["fetchPosts", "deletePost", "sortByDate"]),
-        // components: { PostForm },
+        data() {
+            return {
+                pageNumber: 0,
+                size: 10
+            };
+        },
+        computed: {
+            ...mapGetters(["allPosts", "postsCount"]),
+            pageCount() {
+                let l = this.allPosts.length;
+                let s = this.size;
+                return Math.ceil(l / s);
+            },
+            paginatedDate() {
+                const start = this.pageNumber * this.size,
+                    end = start + this.size;
+                return this.allPosts.slice(start, end);
+            }
+        },
+        methods: {
+            ...mapActions(["fetchPosts", "deletePost", "sortByDate"]),
+            nextPage() {
+                this.pageNumber++;
+            },
+            prevPage() {
+                this.pageNumber--;
+            },
+            currentPageDate(pageNumber) {
+                // const start = pageNumber * this.size,
+                //     end = start + this.size;
+                // return this.allPosts.slice(start, end);
+                this.pageNumber = pageNumber;
+            }
+        },
+
         mounted() {
             // this.$store.dispatch('fetchPosts'); // Так можно получить доступ к экшену стора, а можно через mapActions
             this.fetchPosts();
@@ -111,7 +150,7 @@
         margin-right: 18%;
         margin-left: 18%;
     }
-    .sort-button{
+    .sort-button {
         height: 60px;
         width: 295px;
         background: #fff;
@@ -120,7 +159,7 @@
         font-size: 24px;
     }
     .add-post-button {
-        background: #19D94F;
+        background: #19d94f;
         border-radius: 30px;
         font-size: 24px;
         color: #fff;
